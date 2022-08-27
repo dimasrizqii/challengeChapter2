@@ -33,12 +33,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         val tipPercentage = when {
-            binding.rbAmazing.isChecked -> 0.2
-            binding.rbGood.isChecked -> 0.18
-            else -> 0.15
+            binding.rbAmazing.isChecked -> cost * 0.2
+            binding.rbGood.isChecked -> cost * 0.18
+            else -> cost * 0.15
         }
 
-        var tip = tipPercentage * cost
+        var tip = tipPercentage
 
         if (binding.swTip.isChecked) {
             tip = ceil(tip)
